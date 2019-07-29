@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客 | Hexo</title>
+  <title>RestClient | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="标题">
+  <meta name="description" content="封装request方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465import requestsfrom common.my_logger import my_loggerfrom common.Dat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/我的第一篇博客/index.html">
+<meta property="og:title" content="RestClient">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/RestClient/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="标题">
+<meta property="og:description" content="封装request方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465import requestsfrom common.my_logger import my_loggerfrom common.Dat">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T06:56:38.017Z">
+<meta property="og:updated_time" content="2019-07-29T15:11:18.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客">
-<meta name="twitter:description" content="标题">
+<meta name="twitter:title" content="RestClient">
+<meta name="twitter:description" content="封装request方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465import requestsfrom common.my_logger import my_loggerfrom common.Dat">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,27 +154,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RestClient" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客
+      RestClient
     </h1>
   
 
         
-        <a href="/2019/07/28/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2019-07-28T06:53:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-28</time>
+        <a href="/2019/07/29/RestClient/" class="archive-article-date">
+  	<time datetime="2019-07-29T15:08:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2>
+        <h3 id="封装request方法"><a href="#封装request方法" class="headerlink" title="封装request方法"></a>封装request方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from common.my_logger import my_logger</span><br><span class="line">from common.DataProcess import DataProcess</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class RestClient(object):</span><br><span class="line">    <span class="string">""</span><span class="string">"通用request请求封装类"</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.logger = my_logger()</span><br><span class="line">        self.response_helper = DataProcess()</span><br><span class="line"></span><br><span class="line">    def request(self, method, url, headers,  params=None, json=None, data=None, log_description=None):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        http方法的封装</span></span><br><span class="line"><span class="string">        :param method:http请求的方法，str</span></span><br><span class="line"><span class="string">        :param url:http请求的url,str</span></span><br><span class="line"><span class="string">        :param headers:http请求的header，dict</span></span><br><span class="line"><span class="string">        :param params:http请求的查询参数，dict</span></span><br><span class="line"><span class="string">        :param json:http请求的body体，json</span></span><br><span class="line"><span class="string">        :param data:http请求的body体，dict</span></span><br><span class="line"><span class="string">        :param log_description:每个测试类通用的日志打印格式，str</span></span><br><span class="line"><span class="string">        :return:http响应的处理结果，json</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">        result = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line">            <span class="keyword">if</span> method == <span class="string">'post'</span>:</span><br><span class="line">                response = requests.post(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'get'</span>:</span><br><span class="line">                response = requests.get(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'put'</span>:</span><br><span class="line">                response = requests.put(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'delete'</span>:</span><br><span class="line">                response = requests.delete(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'patch'</span>:</span><br><span class="line">                response = requests.patch(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'head'</span>:</span><br><span class="line">                response = requests.head(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">'options'</span>:</span><br><span class="line">                response = requests.options(</span><br><span class="line">                    url, headers=headers, params=params, json=json, data=data)</span><br><span class="line"></span><br><span class="line">        except Exception as e:</span><br><span class="line">            result[<span class="string">'error_description'</span>] = e</span><br><span class="line">            self.logger.error(log_description + <span class="string">'error: &#123;&#125;'</span>.format(e))</span><br><span class="line">            <span class="built_in">return</span> result</span><br><span class="line"></span><br><span class="line">        self.logger.info(log_description + <span class="string">'url: &#123;&#125;'</span>.format(response.url))</span><br><span class="line">        self.logger.info(log_description + <span class="string">'params: &#123;&#125;'</span>.format(params))</span><br><span class="line">        self.logger.info(log_description + <span class="string">'headers: &#123;&#125;'</span>.format(headers))</span><br><span class="line">        self.logger.info(log_description + <span class="string">'body: &#123;&#125;'</span>.format(json))</span><br><span class="line">        self.logger.info(log_description + <span class="string">'response status_code: &#123;&#125;, '</span></span><br><span class="line">                                           <span class="string">'content: &#123;&#125;'</span>.format(response.status_code, response.text))</span><br><span class="line"></span><br><span class="line">        result = self.response_helper.content_handler(response)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">return</span> result</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -253,7 +255,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/28/我的第一篇博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/29/RestClient/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -267,15 +269,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
+    <a href="/2019/07/29/my-logger/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my_logger</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
