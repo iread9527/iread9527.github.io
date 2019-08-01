@@ -152,6 +152,152 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-pytestint" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/01/pytestint/">pytestint</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/01/pytestint/" class="archive-article-date">
+  	<time datetime="2019-08-01T14:50:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[pytest]</span><br><span class="line">addopts = --strict-markers</span><br><span class="line"></span><br><span class="line">markers =</span><br><span class="line">    p0: <span class="built_in">test</span> <span class="keyword">case</span> tag p0</span><br><span class="line">    p1: <span class="built_in">test</span> <span class="keyword">case</span> tag p1</span><br><span class="line">    global_internal: global</span><br><span class="line">    <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/01/pytestint/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-pytest学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/01/pytest学习笔记/">pytest学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/01/pytest学习笔记/" class="archive-article-date">
+  	<time datetime="2019-08-01T14:48:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="pytest-学习笔记整理"><a href="#pytest-学习笔记整理" class="headerlink" title="pytest 学习笔记整理"></a>pytest 学习笔记整理</h2><h4 id="1、执行一个文件下的所有测试文件"><a href="#1、执行一个文件下的所有测试文件" class="headerlink" title="1、执行一个文件下的所有测试文件"></a>1、执行一个文件下的所有测试文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pytest testing/</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、给用例打标签并且只执行相应标签的用例"><a href="#2、给用例打标签并且只执行相应标签的用例" class="headerlink" title="2、给用例打标签并且只执行相应标签的用例"></a>2、给用例打标签并且只执行相应标签的用例</h3><h4 id="2-0、在pytest-ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选"><a href="#2-0、在pytest-ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选" class="headerlink" title="2.0、在pytest.ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选"></a>2.0、在<code>pytest.ini</code>注册标签，<code>strict-markers</code>表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content of pytest.ini</span></span><br><span class="line">[pytest]</span><br><span class="line">addopts = --strict-markers </span><br><span class="line">markers =</span><br><span class="line">    p0: <span class="built_in">test</span> <span class="keyword">case</span> tag p0</span><br><span class="line">    p1: <span class="built_in">test</span> <span class="keyword">case</span> tag p1</span><br><span class="line">    testid: <span class="built_in">test</span> <span class="keyword">case</span> id</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1、测试用例"><a href="#2-1、测试用例" class="headerlink" title="2.1、测试用例"></a>2.1、测试用例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content of test_mark.py</span></span><br><span class="line">import pytest </span><br><span class="line"></span><br><span class="line">@pytest.mark.p0</span><br><span class="line">@pytest.mark.testid</span><br><span class="line">def test_1():</span><br><span class="line">    assert abs(-1) == 1</span><br><span class="line"></span><br><span class="line">@pytest.mark.p1</span><br><span class="line">def test_2():</span><br><span class="line">    assert abs(-1) == -1</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2、执行打了特定标签的用例们"><a href="#2-2、执行打了特定标签的用例们" class="headerlink" title="2.2、执行打了特定标签的用例们"></a>2.2、执行打了特定标签的用例们</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pytest -m p0</span><br><span class="line">pytest -m <span class="string">"not p0"</span></span><br><span class="line">pytest -m <span class="string">"p0 or p1"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="pytest-重新执行失败用例"><a href="#pytest-重新执行失败用例" class="headerlink" title="pytest 重新执行失败用例"></a>pytest 重新执行失败用例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pytest --lf</span><br></pre></td></tr></table></figure>
+
+<h3 id="pytest执行打印控制台日志，并设置日志级别"><a href="#pytest执行打印控制台日志，并设置日志级别" class="headerlink" title="pytest执行打印控制台日志，并设置日志级别"></a>pytest执行打印控制台日志，并设置日志级别</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[pytest]</span><br><span class="line">log_cli=<span class="literal">true</span>  </span><br><span class="line">log_level=NOTSET</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成测试报告到report路径下并保留格式"><a href="#生成测试报告到report路径下并保留格式" class="headerlink" title="生成测试报告到report路径下并保留格式"></a>生成测试报告到report路径下并保留格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pytest --html=report --self-contained-html</span><br></pre></td></tr></table></figure>
+
+<h3 id="conftest-py"><a href="#conftest-py" class="headerlink" title="conftest.py"></a>conftest.py</h3><p>import smtplib<br>import pytest</p>
+<p>@pytest.fixture(scope=”module”)<br>def smtp_connection():<br>    smtp_connection = smtplib.SMTP(“smtp.gmail.com”, 587, timeout=5)<br>    yield smtp_connection  # provide the fixture value<br>    print(“teardown smtp”)<br>    smtp_connection.close()</p>
+<p>fixture执行优先级，session，module，class，function，然后按照顺序执行</p>
+<h1 id="content-of-conftest-py"><a href="#content-of-conftest-py" class="headerlink" title="content of conftest.py"></a>content of conftest.py</h1><p>def pytest_collection_modifyitems(session, config, items):<br>    for item in items:<br>        for marker in item.iter_markers(name=”test_id”):<br>            test_id = marker.args[0]<br>            item.user_properties.append((“test_id”, test_id))<br>And in your tests:</p>
+<h1 id="content-of-test-function-py"><a href="#content-of-test-function-py" class="headerlink" title="content of test_function.py"></a>content of test_function.py</h1><p>import pytest</p>
+<p>@pytest.mark.test_id(1501)<br>def test_function():<br>    assert True</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/01/pytest学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-run-tests" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -249,70 +395,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/31/readme/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-pytestini" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/pytestini/">pytestini</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/31/pytestini/" class="archive-article-date">
-  	<time datetime="2019-07-31T13:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="interface-pytest-ini"><a href="#interface-pytest-ini" class="headerlink" title="interface/pytest.ini"></a>interface/pytest.ini</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[pytest]</span><br><span class="line">addopts = --strict-markers</span><br><span class="line"></span><br><span class="line">markers =</span><br><span class="line">    p0: <span class="built_in">test</span> <span class="keyword">case</span> tag p0</span><br><span class="line">    global_internal: global</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/31/pytestini/">展开全文 >></a>
         </p>
       
 
@@ -700,68 +782,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/29/RestClient/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my-logger" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/my-logger/">my_logger</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/29/my-logger/" class="archive-article-date">
-  	<time datetime="2019-07-29T15:05:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="自定义log"><a href="#自定义log" class="headerlink" title="自定义log"></a>自定义log</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">def my_logger():</span><br><span class="line">    <span class="string">""</span><span class="string">"自定义log，可以根据文件大小或者时间对日志进行分割"</span><span class="string">""</span></span><br><span class="line">    <span class="comment"># logs的路径</span></span><br><span class="line">    base_dir = str(dirname(dirname(abspath(__file__))))</span><br><span class="line">    base_dir = base_dir.replace(<span class="string">'\\'</span>, <span class="string">'/'</span>)</span><br><span class="line">    logs_path = base_dir + <span class="string">'/logs/'</span></span><br><span class="line"></span><br><span class="line">    logger = logging.getLogger(<span class="string">'MyLogger'</span>)</span><br><span class="line">    logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    message_format = <span class="string">'[%(asctime)s]-[line:%(lineno)d]-[%(levelname)s]-%(message)s'</span></span><br><span class="line">    date_format = <span class="string">'%Y-%m-%d-%H:%M:%S'</span></span><br><span class="line">    bytes_of_100M = 104857600</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据大小分割运行日志文件，保留七份，日志级别INFO</span></span><br><span class="line">    run_log_path = logs_path + <span class="string">'trace.log'</span></span><br><span class="line">    trace_handler = logging.handlers.RotatingFileHandler(</span><br><span class="line">        run_log_path, mode=<span class="string">"a"</span>, maxBytes=bytes_of_100M, backupCount=7, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">    trace_handler.setLevel(logging.INFO)</span><br><span class="line">    file_formatter = logging.Formatter(message_format, datefmt=date_format)</span><br><span class="line">    trace_handler.setFormatter(file_formatter)</span><br><span class="line">    logger.addHandler(trace_handler)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据大小分割运行错误日志文件，保留一份，日志级别ERROR</span></span><br><span class="line">    error_log_path = logs_path + <span class="string">'error.log'</span></span><br><span class="line">    error_handler = logging.handlers.RotatingFileHandler(</span><br><span class="line">        error_log_path, mode=<span class="string">"a"</span>, maxBytes=bytes_of_100M, backupCount=1, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">    error_handler.setLevel(logging.ERROR)</span><br><span class="line">    file_formatter = logging.Formatter(message_format, datefmt=date_format)</span><br><span class="line">    error_handler.setFormatter(file_formatter)</span><br><span class="line">    logger.addHandler(error_handler)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据时间分割调试日志文件，保留七天，日志级别DEBUG</span></span><br><span class="line">    <span class="comment"># debug_log_path = logs_path + 'debug.log'</span></span><br><span class="line">    <span class="comment"># debug_handler = logging.handlers.TimedRotatingFileHandler(</span></span><br><span class="line">    <span class="comment">#     debug_log_path, when="midnight", interval=1, backupCount=7)</span></span><br><span class="line">    <span class="comment"># debug_handler.setLevel(logging.DEBUG)</span></span><br><span class="line">    <span class="comment"># file_formatter = logging.Formatter(message_format, datefmt=date_format)</span></span><br><span class="line">    <span class="comment"># debug_handler.setFormatter(file_formatter)</span></span><br><span class="line">    <span class="comment"># logger.addHandler(debug_handler)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用StreamHandler输出到控制台,日志级别INFO</span></span><br><span class="line">    <span class="comment"># console_handler = logging.StreamHandler()</span></span><br><span class="line">    <span class="comment"># console_handler.setLevel(logging.INFO)</span></span><br><span class="line">    <span class="comment"># console_message_format = '[line:%(lineno)d]-%(levelname)s-%(message)s'</span></span><br><span class="line">    <span class="comment"># console_formatter = logging.Formatter(console_message_format)</span></span><br><span class="line">    <span class="comment"># console_handler.setFormatter(console_formatter)</span></span><br><span class="line">    <span class="comment"># logger.addHandler(console_handler)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> logger</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    logger = my_logger()</span><br><span class="line">    logger.debug(<span class="string">'This is a customer debug message'</span>)</span><br><span class="line">    logger.info(<span class="string">'This is an customer info message'</span>)</span><br><span class="line">    logger.warning(<span class="string">'This is a customer warning message'</span>)</span><br><span class="line">    logger.error(<span class="string">'This is an customer error message'</span>)</span><br><span class="line">    logger.critical(<span class="string">'This is a customer critical message'</span>)</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/my-logger/">展开全文 >></a>
         </p>
       
 
