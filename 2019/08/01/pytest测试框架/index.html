@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可  1、执行一个文件下的所有测试文件1pytest testing/  2、给用例打标签并且只执行相应标签的用例2.0、">
+<meta name="description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可">
 <meta name="keywords" content="pytest">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pytest测试框架">
 <meta property="og:url" content="http://yoursite.com/2019/08/01/pytest测试框架/index.html">
 <meta property="og:site_name" content="测试开发技术分享">
-<meta property="og:description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可  1、执行一个文件下的所有测试文件1pytest testing/  2、给用例打标签并且只执行相应标签的用例2.0、">
+<meta property="og:description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T02:28:45.128Z">
+<meta property="og:updated_time" content="2019-08-03T03:36:33.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pytest测试框架">
-<meta name="twitter:description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可  1、执行一个文件下的所有测试文件1pytest testing/  2、给用例打标签并且只执行相应标签的用例2.0、">
+<meta name="twitter:description" content="0、 安装0.0、 pip install -U pytest0.1、编写pytest测试用例，只需要按照下面的规则： 测试文件以test_开头（以_test结尾也可以） 测试类以Test开头，并且不能带有 init 方法 测试函数以test_开头 断言使用基本的assert即可">
 
 
 
@@ -338,6 +338,8 @@
 <li>测试函数以test_开头</li>
 <li>断言使用基本的assert即可</li>
 </ul>
+<a id="more"></a>
+
 <h3 id="1、执行一个文件下的所有测试文件"><a href="#1、执行一个文件下的所有测试文件" class="headerlink" title="1、执行一个文件下的所有测试文件"></a>1、执行一个文件下的所有测试文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pytest testing/</span><br></pre></td></tr></table></figure>
 
 <h3 id="2、给用例打标签并且只执行相应标签的用例"><a href="#2、给用例打标签并且只执行相应标签的用例" class="headerlink" title="2、给用例打标签并且只执行相应标签的用例"></a>2、给用例打标签并且只执行相应标签的用例</h3><h4 id="2-0、在pytest-ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选"><a href="#2-0、在pytest-ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选" class="headerlink" title="2.0、在pytest.ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选"></a>2.0、在pytest.ini注册标签，strict-markers表示使用没注册标签的用例都会报错，p0为标签，冒号后面是标签的注释，可选</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content of pytest.ini</span></span><br><span class="line">[pytest]</span><br><span class="line">addopts = --strict-markers </span><br><span class="line">markers =</span><br><span class="line">    p0: <span class="built_in">test</span> <span class="keyword">case</span> tag p0</span><br><span class="line">    p1: <span class="built_in">test</span> <span class="keyword">case</span> tag p1</span><br><span class="line">    testid: <span class="built_in">test</span> <span class="keyword">case</span> id</span><br></pre></td></tr></table></figure>
@@ -403,8 +405,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/01/pytestint/" rel="prev" title="pytestint">
-                pytestint <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/01/pytestini/" rel="prev" title="pytest配置文件">
+                pytest配置文件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

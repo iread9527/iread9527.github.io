@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="testcases/conftest.py123456789101112131415161718192021import pytestfrom urls.root_url import RootURLfrom common.DataProcess import DataProcessfrom module.iammanager.ManagerDomain import ManagerDomain@">
+<meta name="description" content="testcases/conftest.py">
 <meta name="keywords" content="接口测试框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="conftest">
 <meta property="og:url" content="http://yoursite.com/2019/07/31/conftest/index.html">
 <meta property="og:site_name" content="测试开发技术分享">
-<meta property="og:description" content="testcases/conftest.py123456789101112131415161718192021import pytestfrom urls.root_url import RootURLfrom common.DataProcess import DataProcessfrom module.iammanager.ManagerDomain import ManagerDomain@">
+<meta property="og:description" content="testcases/conftest.py">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-03T02:26:32.086Z">
+<meta property="og:updated_time" content="2019-08-03T03:50:35.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="conftest">
-<meta name="twitter:description" content="testcases/conftest.py123456789101112131415161718192021import pytestfrom urls.root_url import RootURLfrom common.DataProcess import DataProcessfrom module.iammanager.ManagerDomain import ManagerDomain@">
+<meta name="twitter:description" content="testcases/conftest.py">
 
 
 
@@ -332,7 +332,9 @@
       
 
       
-        <h3 id="testcases-conftest-py"><a href="#testcases-conftest-py" class="headerlink" title="testcases/conftest.py"></a>testcases/conftest.py</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import pytest</span><br><span class="line">from urls.root_url import RootURL</span><br><span class="line">from common.DataProcess import DataProcess</span><br><span class="line">from module.iammanager.ManagerDomain import ManagerDomain</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def manager_domain():</span><br><span class="line">    domain = ManagerDomain()</span><br><span class="line">    <span class="built_in">return</span> domain</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def data_helper():</span><br><span class="line">    data_process = DataProcess()</span><br><span class="line">    <span class="built_in">return</span> data_process</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def root_url():</span><br><span class="line">    <span class="built_in">return</span> RootURL.beta_global.value</span><br></pre></td></tr></table></figure>
+        <h3 id="testcases-conftest-py"><a href="#testcases-conftest-py" class="headerlink" title="testcases/conftest.py"></a>testcases/conftest.py</h3><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import pytest</span><br><span class="line">from urls.root_url import RootURL</span><br><span class="line">from common.DataProcess import DataProcess</span><br><span class="line">from module.iammanager.ManagerDomain import ManagerDomain</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def manager_domain():</span><br><span class="line">    domain = ManagerDomain()</span><br><span class="line">    <span class="built_in">return</span> domain</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def data_helper():</span><br><span class="line">    data_process = DataProcess()</span><br><span class="line">    <span class="built_in">return</span> data_process</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@pytest.fixture(scope=<span class="string">'module'</span>)</span><br><span class="line">def root_url():</span><br><span class="line">    <span class="built_in">return</span> RootURL.beta_global.value</span><br></pre></td></tr></table></figure>
 
 
       
